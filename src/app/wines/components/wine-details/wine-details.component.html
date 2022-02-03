@@ -1,0 +1,16 @@
+<div class="wine-container">
+  <div class="name">{{ wine.name + " (" + wine.id + ")" }}</div>
+
+  <div class="exchange" *ngFor="let food of wine.foodPairing">
+    name: {{ food.name }} gluten: {{ food.glutten }} kcal:
+    {{ food.kcal }} vegan:
+    {{ food.vegan }}
+  </div>
+  <div
+    class="price"
+    [class.positive]="wine.price > 5"
+    [class.negative]="wine.price <= 5"
+  >
+    € {{ wine.price }}
+  </div>
+</div>
